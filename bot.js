@@ -1,14 +1,31 @@
-bot = commands.Bot(command_prefix='$')
+const Discord = require('discord.js');
 
-@bot.event
-async def on_ready():
-    print('Logged in as')
-    print(bot.user.name)
-    print(bot.user.id)
-    print('------')
+const client = new Discord.Client();
 
-@bot.command()
-async def greet(ctx):
-    await ctx.send(":smiley: :wave: Up yours!")
+ 
 
-bot.run('NDQ0Nzg0OTM1Njk0MjM3NzA4.DeNHOg.M9gNY80oeZ4BN7FaRIg_78Bx9FA')
+client.on('ready', () => {
+
+    console.log('I am ready!');
+
+});
+
+ 
+
+client.on('message', message => {
+
+    if (message.content === 'ping') {
+
+       message.reply('pong');
+
+       }
+
+});
+
+ 
+
+// THIS  MUST  BE  THIS  WAY
+
+client.login(process.env.NDQ0Nzg0OTM1Njk0MjM3NzA4.DeNHOg.M9gNY80oeZ4BN7FaRIg_78Bx9FA
+July 7, 2018
+);//where BOT_TOKEN is the token of our bot
