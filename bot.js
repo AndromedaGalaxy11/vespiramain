@@ -1,19 +1,14 @@
-/*
- * Discord Bot Builder Bot
- * Version 1.2.0
- * Robert Borghese
- */
+bot = commands.Bot(command_prefix='$')
 
-const Files = require(require('path').join(__dirname, 'js', 'Main.js')).Files;
+@bot.event
+async def on_ready():
+    print('Logged in as')
+    print(bot.user.name)
+    print(bot.user.id)
+    print('------')
 
-if(!process.send) {
+@bot.command()
+async def greet(ctx):
+    await ctx.send(":smiley: :wave: Up yours!")
 
-Files.initStandalone();
-
-} else {
-
-process.on('message', function(content) {
-	Files.initBotTest(content);
-});
-
-}
+bot.run('https://gyazo.com/b004f5a7ffee4a4513c7aec0cb79c667')
